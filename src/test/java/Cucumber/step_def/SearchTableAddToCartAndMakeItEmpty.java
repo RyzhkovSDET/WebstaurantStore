@@ -17,12 +17,12 @@ public class SearchTableAddToCartAndMakeItEmpty extends BrowserUtils {
     HomePage homePage = new HomePage();
 
 
-    @Given("user on the WebstaurantStore home page")
+    @Given("user is on the WebstaurantStore home page")
     public void user_on_the_webstaurant_store_home_page() {
         Driver.getDriver().get(ConfigurationReader.get("webstaurantStoreUrl"));
     }
 
-    @When("user search {string}")
+    @When("user search for {string}")
     public void user_search(String paramForSearch) throws InterruptedException {
 
         homePage.searchBar.sendKeys(paramForSearch);
@@ -30,7 +30,7 @@ public class SearchTableAddToCartAndMakeItEmpty extends BrowserUtils {
     }
 
 
-    @Then("title should be {string} on this page")
+    @Then("title should be {string}")
     public void title_should_on_this_page(String expectedTitle) {
         String actualTitle = Driver.getDriver().getTitle().toString();
         Assertions.assertTrue(actualTitle.contains(expectedTitle));
@@ -42,12 +42,12 @@ public class SearchTableAddToCartAndMakeItEmpty extends BrowserUtils {
         homePage.addLastWebElement.click();
     }
 
-    @When("user move to Cart")
+    @When("user navigates to the Cart")
     public void user_should_see_one_item_in_the_cart() {
         homePage.viewCartButton.click();
     }
 
-    @When("user click on button  Empty Cart")
+    @When("user click on the Empty Cart button")
     public void user_click_on_button_empty_cart() {
         waitForVisibility(cart.makeCartEmptyButton,2);
         cart.makeCartEmptyButton.click();
@@ -56,7 +56,7 @@ public class SearchTableAddToCartAndMakeItEmpty extends BrowserUtils {
         homePage.cartButton.click();
     }
 
-    @Then("cart should see massage {string}")
+    @Then("user should see massage {string}")
     public void cart_should_see_massage(String expectedText) {
         String actualText = cart.yourCartIsEmptyText.getText().toString();
 
