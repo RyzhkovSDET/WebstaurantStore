@@ -38,6 +38,7 @@ public class SearchTableAddToCartAndMakeItEmpty extends BrowserUtils {
 
     @When("user add on last item to the cart")
     public void user_add_on_last_item_to_the_cart() {
+        scrollToElement(homePage.addLastWebElement);
         homePage.addLastWebElement.click();
     }
 
