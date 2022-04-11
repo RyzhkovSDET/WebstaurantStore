@@ -42,7 +42,7 @@ public class SearchTableAddToCartAndMakeItEmpty extends BrowserUtils {
         homePage.addLastWebElement.click();
     }
 
-    @When("user navigates to the Cart")
+    @When("user navigates to the  Cart")
     public void user_should_see_one_item_in_the_cart() {
         homePage.viewCartButton.click();
     }
